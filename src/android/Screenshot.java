@@ -77,7 +77,10 @@ public class Screenshot extends CordovaPlugin {
             webView.getPluginManager().postMessage("captureXWalkBitmap", this);
         } else {
             View view = webView.getView();//.getRootView();
+			view.measure(MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
+			view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
             view.setDrawingCacheEnabled(true);
+            view.buildDrawingCache();
             bitmap = Bitmap.createBitmap(view.getDrawingCache());
             view.setDrawingCacheEnabled(false);
         }
