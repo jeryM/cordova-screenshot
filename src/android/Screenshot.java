@@ -19,6 +19,7 @@ import android.util.Base64;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.MeasureSpec; 
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
